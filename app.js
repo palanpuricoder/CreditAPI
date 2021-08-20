@@ -19,7 +19,7 @@ mongoose.connect(
 );
 
 // import routes
-
+const userRoutes = require("./routes");
 
 //import middleware
 app.use(express.json());
@@ -28,8 +28,7 @@ app.use(express.json());
 // app.use(cors())
 
 //route middleware
-
-
+app.use("/api",userRoutes);
 
 app.listen(process.env.PORT, ()=>console.log(
     "server is running on port " + process.env.PORT
